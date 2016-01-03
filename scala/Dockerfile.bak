@@ -1,0 +1,6 @@
+FROM zoomulus/java7
+RUN curl -O http://downloads.typesafe.com/scala/2.11.7/scala-2.11.7.deb \
+	&& dpkg -i scala-2.11.7.deb \
+	&& rm scala-2.11.7.deb
+CMD bash
+
