@@ -190,6 +190,11 @@ logstash () {
 	tag logstash:2.1.1 logstash:latest
 }
 
+jackrabbit-oak() {
+	build jackrabbit-oak jackrabbit-oak:1.2.9
+	tag jackrabbit-oak:1.2.9 jackrabbit-oak:latest
+}
+
 all () {
 	base
 	all_langs
@@ -202,12 +207,13 @@ all () {
 	haproxy
 	eureka
 	logstash
+	jackrabbit-oak
 }	
 
 list () {
 	echo
 	echo "Available containers to build:"
-	for c in base java7 java8 python2 python3 scala go erlang pgsql mongo couchdb cassandra redis influxdb nginx nodejs bottle tomcat7 tomcat8 zookeeper rabbitmq kafka elasticsearch haproxy eureka logstash; do echo $c; done
+	for c in base java7 java8 python2 python3 scala go erlang pgsql mongo couchdb cassandra redis influxdb nginx nodejs bottle tomcat7 tomcat8 zookeeper rabbitmq kafka elasticsearch haproxy eureka logstash jackrabbit-oak; do echo $c; done
 	echo
 	echo "Available containersets to build:"
 	for cs in all_java all_python all_langs all_dbs all_web all; do echo $cs; done
