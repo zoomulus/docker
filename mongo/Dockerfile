@@ -7,6 +7,7 @@ RUN for key in DFFA3DCF326E302C4787673A01C4E7FAAAB2461C 42F3E95A2C4F08279C4960AD
 	&& mkdir -p /data/db \
 	&& chown -R mongodb:mongodb /data/db \
 	&& rm -rf /var/lib/apt/lists/*
+COPY mongod.conf /etc/mongod.conf
 
 EXPOSE 27017
 VOLUME /var/lib/mongodb
