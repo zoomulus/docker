@@ -8,8 +8,9 @@ RUN mkdir -p /usr/share/elasticsearch/config/scripts \
 	&& mkdir -p /usr/share/elasticsearch/data/elasticsearch \
 	&& chown -R elasticsearch /usr/share/elasticsearch
 
-COPY config.yml /usr/share/elasticsearch/config/config.yml
+COPY elasticsearch.yml /usr/share/elasticsearch/config/elasticsearch.yml
 COPY logging.yml /usr/share/elasticsearch/config/logging.yml
+RUN mv /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch.yml.bak && ln -s /usr/share/elasticsearch/config/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
 VOLUME /usr/share/elasticsearch/data
 EXPOSE 9200 9300
 CMD ["gosu", "elasticsearch", "/usr/share/elasticsearch/bin/elasticsearch"]
