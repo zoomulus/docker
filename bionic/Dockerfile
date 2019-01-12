@@ -1,6 +1,6 @@
-FROM ubuntu:15.10
+FROM ubuntu:18.04
 
-RUN apt-get update && apt-get install -y curl vim
+RUN apt-get update && apt-get install -y curl vim gnupg
 # Add gosu for root stepdown.
 # This key isn't certified but Docker seems to trust it so I guess that's ok.
 RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \

@@ -9,16 +9,18 @@ tag () {
 	shift
 	until [ -z "$1" ]
 	do
-		docker tag -f zoomulus/$container zoomulus/$1
+		docker tag zoomulus/$container zoomulus/$1
 		shift
 	done
 }
 
 base () {
 	build trusty ubuntu:14.04
-	tag ubuntu:14.04 ubuntu:latest trusty:latest base:latest
-	build wily ubuntu:15.10
-	tag ubuntu:15.10 wily:latest
+	tag ubuntu:14.04 trusty:latest
+	build xenial ubuntu:16.04
+	tag ubuntu:16.04 xenial:latest
+	build bionic ubuntu:18.04
+	tag ubuntu:18.04 bionic:latest ubuntu:latest base:latest
 }
 
 
