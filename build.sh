@@ -84,8 +84,8 @@ pgsql () {
 }
 
 mongo () {
-	build mongo mongo:3.2.0
-	tag mongo:3.2.0 mongo:latest
+	build mongo mongo:3.6.3
+	tag mongo:3.6.3 mongo:latest
 }
 
 couchdb () {
