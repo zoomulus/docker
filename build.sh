@@ -34,9 +34,15 @@ java8 () {
 	tag java8:1.8.0 java8:latest
 }
 
+java11 () {
+	build java11 java11:1.11.0
+	tag java11:1.11.0 java11:latest
+}
+
 all_java () {
 	java7
 	java8
+	java11
 }
 
 python2 () {
