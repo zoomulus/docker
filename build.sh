@@ -20,7 +20,9 @@ base () {
 	build xenial ubuntu:16.04
 	tag ubuntu:16.04 xenial:latest
 	build bionic ubuntu:18.04
-	tag ubuntu:18.04 bionic:latest ubuntu:latest base:latest
+	tag ubuntu:18.04 bionic:latest
+	build focal ubuntu:20.04
+	tag ubuntu:20.04 focal:latest ubuntu:latest base:latest
 }
 
 
@@ -90,8 +92,8 @@ pgsql () {
 }
 
 mongo () {
-	build mongo mongo:3.6.3
-	tag mongo:3.6.3 mongo:latest
+	build mongo mongo:3.6.8
+	tag mongo:3.6.8 mongo:latest
 }
 
 couchdb () {
